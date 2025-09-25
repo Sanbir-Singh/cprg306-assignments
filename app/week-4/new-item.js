@@ -24,14 +24,22 @@ export default function NewItem() {
         </div>
         <button
           onClick={decrement}
-          className="bg-blue-400 font-bold hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-50 active:bg-slate-400 rounded text-white w-8 p-2 m-auto"
+          className={`text-white w-8 p-2 m-auto font-bold rounded ${
+            quantity <= 1
+              ? "bg-slate-700 cursor-not-allowed hover:bg-slate-700"
+              : "bg-blue-400 hover:bg-cyan-700 active:bg-slate-400"
+          }`}
           disabled={quantity <= 1}
         >
           -
         </button>
         <button
           onClick={increment}
-          className="bg-blue-400 font-bold hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-50 active:bg-slate-400 rounded text-white w-8 p-2 m-auto"
+          className={`text-white w-8 p-2 m-auto font-bold rounded ${
+            quantity >= 20
+              ? "bg-slate-700 cursor-not-allowed hover:bg-slate-700"
+              : "bg-blue-400 hover:bg-cyan-700 active:bg-slate-400"
+          }`}
           disabled={quantity >= 20}
         >
           +
