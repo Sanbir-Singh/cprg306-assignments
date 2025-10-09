@@ -5,12 +5,12 @@ import items from "./items.json";
 
 export default function ItemList() {
   const [sortBy, setSortBy] = useState("name");
-  const sortedItems = [...items];
+  const itemsCopy = [...items];
 
   if (sortBy === "name") {
-    sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+    itemsCopy.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sortBy === "category") {
-    sortedItems.sort((a, b) => a.category.localeCompare(b.category));
+    itemsCopy.sort((a, b) => a.category.localeCompare(b.category));
   }
 
   return (
@@ -36,7 +36,7 @@ export default function ItemList() {
       </div>
 
       <div>
-        {sortedItems.map((item) => (
+        {itemsCopy.map((item) => (
           <Item key={item.id} item={item} />
         ))}
       </div>
