@@ -36,8 +36,8 @@ export default function ItemList() {
       </div>
 
       <div>
-        {itemsCopy.map((item) => (
-          <Item key={item.id} item={item} />
+        {itemsCopy.map((entry) => (
+          <Item key={entry.id} item={entry} />
         ))}
       </div>
     </main>
