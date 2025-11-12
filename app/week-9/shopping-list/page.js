@@ -14,6 +14,9 @@ export default function ShoppingListPage() {
   const { user } = useUserAuth();
   const router = useRouter();
 
+  const [items, setItems] = useState(itemsData);
+  const [selectedItemName, setSelectedItemName] = useState("");
+
   useEffect(() => {
     if (!user) {
       router.push("/week-9");
@@ -27,9 +30,6 @@ export default function ShoppingListPage() {
       </main>
     );
   }
-
-  const [items, setItems] = useState(itemsData);
-  const [selectedItemName, setSelectedItemName] = useState("");
 
   const makeId = () => Math.random().toString(36).slice(2, 10);
 
